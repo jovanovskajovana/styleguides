@@ -101,7 +101,7 @@ Naming convention:
 
 ## Linting
 
-A good linting setup is also key to a better React project. Check out our [JavaScript code formatting & linting](..#code-formatting--linting) and add [React ESLint Package](https://www.npmjs.com/package/eslint-plugin-react) to the existing setup.
+A good linting setup is also key to a better React project. Check out our [JavaScript code formatting & linting](../javascript#code-formatting--linting) and add [React ESLint Package](https://www.npmjs.com/package/eslint-plugin-react) to the existing setup.
 
 ```
 yarn add -D eslint-plugin-react
@@ -313,13 +313,13 @@ const UserList = styled(Layout)`
 ;
 ```
 
-If at some point you're worried about performance of the CSS-in-JS libraries which parse and apply the styles in the browser, try [Linaria](https://linaria.now.sh/), a zero-runtime CSS-in-JS library, to extract all styles written in JavaScript code into real CSS files.
+If at some point you're worried about performance of the CSS-in-JS libraries which parse and apply the styles in the browser, try [Linaria](https://linaria.dev/), a zero-runtime CSS-in-JS library, to extract all styles written in JavaScript code into real CSS files.
 
 In any case, write your own, clean, and no-need-to-override styles, unless some <i>force majeure</i> requires otherwise.
 
 ## Hooks
 
-[React Hooks](https://reactjs.org/docs/hooks-intro.html) are not even a new thing, but since they are an alternative to writing class components, we will give them a special section.
+[React Hooks](https://reactjs.org/docs/hooks-intro.html) are not even a new thing, but since they are usually taken as an alternative to writing class components, we’ll give them a special section.
 
 Whereas function components have been called <i>functional stateless components</i> before, they are finally able to handle their local state and side-effects with React Hooks.
 
@@ -474,8 +474,6 @@ Prefer Server-Side Rendering:
 - there are enough server recourses,
 - main scripts are large and load slowly.
 
-Keep reading our Next.js guidelines in [this separate section](../NextJS.md).
-
 ## State management
 
 Managing states with nothing but React - `useState()` hook, or `setState()` for class components - is quite possible, but once the application scales up to complex trees, sending props to each child component becomes redundant and inefficient. That's the point when you start thinking about an additional state management solution.
@@ -579,8 +577,6 @@ If we're already mentioning Apollo as a state management solution, there has to 
 ### Context API
 
 The [React Context API](https://reactjs.org/docs/context.html) is officially recommended from React 16.3.0 as a way to avoid manually passing props to all tree levels, even when not needed. It is very handy for sharing data that can be considered "global" and should be accessible to many components in the tree, such as theme, preferred language, or authenticated user.
-
-Don’t use context just for passing props down to a child component, rather use it for library code. As React’s documentation says, if you only want to avoid passing some props through many levels, [component composition](https://reactjs.org/docs/context.html#before-you-use-context) is often a simpler solution than context.
 
 ## Data fetching
 
